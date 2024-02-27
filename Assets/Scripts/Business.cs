@@ -9,6 +9,8 @@ public class Business : MonoBehaviour
     [SerializeField] private SpriteRenderer middleSpriteRenderer;
     [SerializeField] private SpriteRenderer topSpriteRenderer;
 
+    private int _moneyPerSecond = 1;
+
     private void Start()
     {
         UpdateSprites();
@@ -19,5 +21,10 @@ public class Business : MonoBehaviour
         baseSpriteRenderer.sprite = bussiness.baseSprite;
         middleSpriteRenderer.sprite = bussiness.middleSprite;
         topSpriteRenderer.sprite = bussiness.topSprite;
+    }
+    
+    public void GenerateMoney()
+    {
+        EconomyManager.Instance.AddMoney(_moneyPerSecond);
     }
 }
